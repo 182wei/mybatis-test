@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wei.dao.StudentDao">
+   <select id="selectStudentById" parameterType="java.lang.Integer" resultType="com.wei.domain.Student">
+       select * from student01 where id=#{id}
+   </select>
+    <select id="selectMultiParam" resultType="com.wei.domain.Student">
+        select * from student01 where name=#{myname} or age=#{myage}
+    </select>
+    <select id="selectMultiStudent" resultType="com.wei.domain.Student">
+        select * from student01 where name=#{name } or age=#{age}
+    </select>
+    <select id="selectAll"  resultType="com.wei.domain.Student">
+        select * from student01
+    </select>
+</mapper>
