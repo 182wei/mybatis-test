@@ -50,6 +50,7 @@ public class TestMybatis {
         StudentDao dao=sqlSession.getMapper(StudentDao.class);
        int count=  dao.countStudent();
         System.out.println(count);
+        
         sqlSession.close();
     }
     @Test
