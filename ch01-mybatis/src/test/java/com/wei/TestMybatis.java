@@ -37,6 +37,7 @@ public class TestMybatis {
     sqlSession.commit();
      System.out.println("添加的数量"+num);
      System.out.println(student);
+     System.out.println(student);
  }
 
     @Test
