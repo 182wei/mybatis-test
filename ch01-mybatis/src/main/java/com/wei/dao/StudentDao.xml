@@ -3,16 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wei.dao.StudentDao">
+    <sql id="columns">id,name,email,age</sql>
     <select id="selectStudents" resultType="com.wei.domain.Student">
-    select * from student01 order by id
+    select <include refid="columns"></include> from student01 order by id
     </select>
-    <insert id="insertStudent">
+    <insert id="insertStudent" useGeneratedKeys="true" keyProperty="id">
         insert into student01 values(#{id},#{name},#{email},#{age})
     </insert>
 <!--    Student selectStudent(Student student);-->
     <select id="selectStudent" resultType="com.wei.domain.Student">
         select * from student01
-        <where>
+       <trim prefix="where" >
         <choose>
             <when test="name!=null and name!=''">
                    name =#{name}
@@ -27,7 +28,24 @@
                 age=28
             </otherwise>
         </choose>
-    </where>
+       </trim>
+    </select>
+
+    <insert id="batch" >
+        insert into student01 (name) values
+        <foreach collection="students" item="student" separator=",">
+            (#{student.name})
+        </foreach>
+    </insert>
+
+    <delete id="deleteBatch">
+        delete from student01 where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <select id="queryStudentById" resultType="com.wei.domain.Student">
+        select * from student01 where id= #{id};
     </select>
 
 </mapper>
