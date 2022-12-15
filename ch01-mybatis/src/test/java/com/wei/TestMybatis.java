@@ -72,6 +72,7 @@ public class TestMybatis {
         int result = dao.deleteBatch(arr);
         sqlSession.commit();
         System.out.println(result);
+        System.out.println(result);
     }
 
 
