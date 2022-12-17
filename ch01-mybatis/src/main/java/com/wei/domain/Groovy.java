@@ -16,6 +16,7 @@ public class Groovy {
         String line ="00:COARRI:LOAD REPORT:9:CNDTU:SHJCWZ:202211121000:CNDTU:CNDTU'10:UN8813611:BLUE OCEAN:2245S:CN::202211111835:202211120945:202211111933:202211120745:202211111933:202211120745:145.0' 50:TWCU2041551:20GP:SJJ:SJJ:F:JJCWZKET26260:HAS5325047:0210302:202211120304'\n" + "52:TWTCH::CNDTU::TWTCH::11974.1'99:1' 00:1";
         String pattern = "00[:][^']*";
         String str= "1111222";
+        String  sex="332211";
         String  sex="332244";
         Pattern r = Pattern.compile(pattern);
         Matcher m = r.matcher(line);
