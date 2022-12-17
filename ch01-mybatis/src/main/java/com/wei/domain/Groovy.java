@@ -17,7 +17,7 @@ public class Groovy {
         String pattern = "00[:][^']*";
         String str= "1111";
         String str= "222333";
-        String  sex='';
+        String  sex="33";
         Pattern r = Pattern.compile(pattern);
         Matcher m = r.matcher(line);
         if (m.find()) {
