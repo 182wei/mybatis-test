@@ -18,7 +18,7 @@ public class Groovy {
         String str= "1111222";
         String  sex="332211";
         String  sex3="332244";
-
+        String sex4="2";
         Pattern r = Pattern.compile(pattern);
         Matcher m = r.matcher(line);
         if (m.find()) {
